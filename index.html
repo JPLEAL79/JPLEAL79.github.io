@@ -66,7 +66,7 @@
     .brand { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; text-decoration: none; }
     .brand-mark { width: 11px; height: 11px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 6px var(--accent-soft), 0 0 24px rgba(101,230,180,.55); }
     .nav-links { display: flex; align-items: center; gap: 34px; }
-    .nav-links a { color: #d4d6d4; text-decoration: none; font-size: 1rem; font-weight: 600; transition: color .2s ease, text-shadow .2s ease; }
+    .nav-links a { color: var(--accent); text-decoration: none; font-size: 1rem; font-weight: 600; text-shadow: 0 0 18px rgba(99,230,177,.28); transition: color .2s ease, text-shadow .2s ease; }
     .nav-links a:hover, .nav-links a:focus-visible { color: var(--accent); text-shadow: 0 0 18px rgba(99,230,177,.48); }
     .hero { display: grid; grid-template-columns: minmax(0, 1.28fr) minmax(310px, .72fr); align-items: center; gap: clamp(46px, 7vw, 84px); padding-block: 76px 70px; }
     h1 { max-width: 760px; margin: 0; font-size: clamp(2.8rem, 4.1vw, 3.5rem); font-weight: 500; line-height: 1.04; letter-spacing: -.045em; }
@@ -116,9 +116,9 @@
     .stack-group + .stack-group { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
     .stack-label { margin: 0 0 13px; color: var(--muted); font-size: .76rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
     .tags { display: flex; flex-wrap: wrap; gap: 9px; }
-    .tag { padding: 8px 12px; border: 1px solid var(--border); border-radius: 999px; background: rgba(255,255,255,.025); color: #e2e3e1; font-size: .86rem; font-weight: 500; transition: color .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease; }
+    .tag { padding: 8px 12px; border: 1px solid rgba(99,230,177,.55); border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: .86rem; font-weight: 500; box-shadow: 0 0 18px rgba(99,230,177,.08); transition: color .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease; }
     .tag:hover, .tag.ai:hover { border-color: rgba(99,230,177,.55); background: var(--accent-soft); color: var(--accent); box-shadow: 0 0 18px rgba(99,230,177,.08); }
-    .tag.ai { border-color: var(--border); background: rgba(255,255,255,.025); color: #e2e3e1; }
+    .tag.ai { border-color: rgba(99,230,177,.55); background: var(--accent-soft); color: var(--accent); }
     .timeline { position: relative; display: grid; gap: 12px; }
     .timeline::before { position: absolute; top: 0; bottom: 0; left: 10px; width: 1px; content: ""; background: linear-gradient(var(--accent), rgba(101,230,180,.04)); }
     .role-item { position: relative; display: grid; grid-template-columns: 180px 1fr; gap: 34px; padding: 0 0 24px 42px; }
