@@ -31,8 +31,8 @@
       overflow-x: hidden;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at 78% 4%, rgba(47, 212, 154, 0.11), transparent 29rem),
-        radial-gradient(circle at 7% 28%, rgba(61, 125, 252, 0.08), transparent 24rem),
+        radial-gradient(circle at 78% 4%, rgba(47, 212, 154, 0.18), transparent 31rem),
+        radial-gradient(circle at 7% 28%, rgba(61, 125, 252, 0.11), transparent 25rem),
         var(--bg);
       color: var(--text);
       line-height: 1.65;
@@ -59,46 +59,47 @@
       transition: border-color .25s ease, background .25s ease;
     }
     .site-header.scrolled { border-color: var(--border); background: rgba(7, 17, 15, 0.9); }
-    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-size: .98rem; font-weight: 780; letter-spacing: -.01em; }
+    nav { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-size: 1rem; font-weight: 780; letter-spacing: -.01em; }
     .brand-mark { width: 11px; height: 11px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 6px var(--accent-soft), 0 0 24px rgba(101,230,180,.55); }
     .nav-links { display: flex; align-items: center; gap: 28px; }
-    .nav-links a { color: var(--muted); text-decoration: none; font-size: .9rem; font-weight: 650; transition: color .2s ease; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .94rem; font-weight: 650; transition: color .2s ease; }
     .nav-links a:hover, .nav-links a:focus-visible { color: var(--text); }
-    .hero { min-height: calc(100svh - 72px); display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(290px, .65fr); align-items: center; gap: clamp(48px, 8vw, 100px); padding-block: 78px 90px; }
-    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 24px; color: var(--accent); font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr); align-items: center; gap: clamp(44px, 7vw, 78px); padding-block: 72px 78px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; color: var(--accent); font-size: .76rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
     .eyebrow::before { width: 34px; height: 1px; content: ""; background: currentColor; }
-    h1 { max-width: 820px; margin: 0; font-size: clamp(3.3rem, 8.7vw, 7rem); line-height: .93; letter-spacing: -.067em; }
-    h1 span { display: block; color: var(--accent); }
-    .hero-copy { max-width: 700px; margin: 30px 0 0; color: var(--muted); font-size: clamp(1.02rem, 1.6vw, 1.18rem); }
+    h1 { max-width: 760px; margin: 0; font-size: clamp(3.5rem, 6.8vw, 5.65rem); line-height: .98; letter-spacing: -.058em; }
+    h1 span { color: var(--accent); }
+    .role-line { margin: 15px 0 0; color: #c7ddd5; font-size: clamp(1rem, 1.8vw, 1.2rem); font-weight: 680; letter-spacing: -.015em; }
+    .hero-copy { max-width: 650px; margin: 20px 0 0; color: var(--muted); font-size: clamp(.98rem, 1.35vw, 1.08rem); }
     .hero-copy strong { color: var(--text); font-weight: 650; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
     .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 48px; padding: 0 18px; border: 1px solid var(--border); border-radius: 12px; background: rgba(255,255,255,.025); color: var(--text); text-decoration: none; font-size: .92rem; font-weight: 750; transition: transform .2s ease, border-color .2s ease, background .2s ease, color .2s ease; }
     .button:hover { transform: translateY(-2px); border-color: rgba(101,230,180,.48); background: var(--accent-soft); }
     .button.primary { border-color: var(--accent); background: var(--accent); color: #04110d; }
     .button.primary:hover { background: #88f0c8; }
     .button svg { width: 17px; height: 17px; }
-    .signal-card { position: relative; padding: 28px; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: linear-gradient(145deg, rgba(19,42,34,.92), rgba(10,24,20,.82)); box-shadow: var(--shadow); }
-    .signal-card::after { position: absolute; top: -80px; right: -70px; width: 190px; height: 190px; content: ""; border-radius: 50%; background: rgba(101,230,180,.12); filter: blur(8px); }
-    .status { display: flex; align-items: center; gap: 9px; margin-bottom: 30px; color: #cceadf; font-size: .8rem; font-weight: 700; }
+    .signal-card { position: relative; padding: 26px; overflow: hidden; border: 1px solid rgba(101,230,180,.24); border-radius: var(--radius); background: linear-gradient(145deg, rgba(21,49,39,.96), rgba(9,26,21,.9)); box-shadow: var(--shadow), 0 0 55px rgba(47,212,154,.09); }
+    .signal-card::after { position: absolute; top: -70px; right: -55px; width: 220px; height: 220px; content: ""; border-radius: 50%; background: rgba(101,230,180,.2); filter: blur(12px); }
+    .status { display: flex; align-items: center; gap: 9px; margin-bottom: 22px; color: #d9f3e9; font-size: .8rem; font-weight: 700; }
     .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 15px var(--accent); animation: pulse 2.4s ease-in-out infinite; }
-    .metric { position: relative; z-index: 1; padding-block: 20px; border-top: 1px solid var(--border); }
+    .metric { position: relative; z-index: 1; padding-block: 18px; border-top: 1px solid var(--border); }
     .metric:first-of-type { border-top: 0; padding-top: 0; }
     .metric:last-child { padding-bottom: 0; }
     .metric strong { display: block; font-size: 2rem; line-height: 1.15; letter-spacing: -.04em; }
     .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: .87rem; }
-    section.content-section { padding-block: 90px; border-top: 1px solid var(--border); }
-    .section-head { display: grid; grid-template-columns: .55fr 1.45fr; gap: 32px; margin-bottom: 42px; }
+    section.content-section { padding-block: 64px; border-top: 1px solid var(--border); }
+    .section-head { display: grid; grid-template-columns: .45fr 1.55fr; gap: 28px; margin-bottom: 30px; }
     .section-kicker { margin: 5px 0 0; color: var(--accent); font-size: .76rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
-    h2 { max-width: 720px; margin: 0; font-size: clamp(2rem, 4.7vw, 3.6rem); line-height: 1.08; letter-spacing: -.045em; }
-    h3 { margin: 0; font-size: 1.06rem; letter-spacing: -.015em; }
+    h2 { max-width: 680px; margin: 0; font-size: clamp(1.85rem, 3.25vw, 2.75rem); line-height: 1.13; letter-spacing: -.038em; }
+    h3 { margin: 0; font-size: 1.08rem; letter-spacing: -.015em; }
     .expertise-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-    .card { position: relative; min-height: 210px; padding: 28px; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); transition: transform .28s ease, border-color .28s ease, background .28s ease; }
+    .card { position: relative; min-height: 168px; padding: 24px; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); transition: transform .28s ease, border-color .28s ease, background .28s ease; }
     .card:hover { transform: translateY(-5px); border-color: rgba(101,230,180,.35); background: rgba(19, 40, 34, .88); }
-    .card-number { display: block; margin-bottom: 48px; color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .78rem; }
-    .card p { margin: 12px 0 0; color: var(--muted); font-size: .94rem; }
-    .stack-panel { padding: 30px; border: 1px solid var(--border); border-radius: var(--radius); background: rgba(9,23,19,.74); }
-    .stack-group + .stack-group { margin-top: 26px; padding-top: 26px; border-top: 1px solid var(--border); }
+    .card-number { display: block; margin-bottom: 22px; color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .78rem; }
+    .card p { margin: 9px 0 0; color: var(--muted); font-size: .92rem; }
+    .stack-panel { padding: 25px; border: 1px solid var(--border); border-radius: var(--radius); background: rgba(9,23,19,.74); }
+    .stack-group + .stack-group { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
     .stack-label { margin: 0 0 13px; color: var(--muted); font-size: .76rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
     .tags { display: flex; flex-wrap: wrap; gap: 9px; }
     .tag { padding: 8px 12px; border: 1px solid var(--border); border-radius: 999px; background: rgba(255,255,255,.025); color: #d9e6e1; font-size: .86rem; font-weight: 620; transition: color .2s ease, border-color .2s ease, background .2s ease; }
@@ -106,18 +107,11 @@
     .tag.ai { border-color: rgba(101,230,180,.28); background: var(--accent-soft); color: #baf5dd; }
     .timeline { position: relative; display: grid; gap: 12px; }
     .timeline::before { position: absolute; top: 0; bottom: 0; left: 10px; width: 1px; content: ""; background: linear-gradient(var(--accent), rgba(101,230,180,.04)); }
-    .role-item { position: relative; display: grid; grid-template-columns: 180px 1fr; gap: 34px; padding: 0 0 36px 42px; }
+    .role-item { position: relative; display: grid; grid-template-columns: 180px 1fr; gap: 34px; padding: 0 0 24px 42px; }
     .role-item::before { position: absolute; top: 7px; left: 6px; width: 9px; height: 9px; content: ""; border: 2px solid var(--bg); border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
     .company { color: var(--accent); font-weight: 760; }
     .role-item p { margin: 7px 0 0; color: var(--muted); font-size: .93rem; }
-    .ai-feature { display: grid; grid-template-columns: .8fr 1.2fr; gap: 50px; align-items: center; padding: clamp(30px, 5vw, 52px); border: 1px solid rgba(101,230,180,.24); border-radius: 26px; background: linear-gradient(140deg, rgba(101,230,180,.11), rgba(10,27,22,.76) 55%); box-shadow: var(--shadow); }
-    .ai-orbit { position: relative; display: grid; place-items: center; width: min(280px, 100%); aspect-ratio: 1; margin-inline: auto; }
-    .ai-orbit::before, .ai-orbit::after { position: absolute; inset: 11%; content: ""; border: 1px solid rgba(101,230,180,.25); border-radius: 50%; animation: rotate 18s linear infinite; }
-    .ai-orbit::after { inset: 25%; border-style: dashed; animation-direction: reverse; animation-duration: 12s; }
-    .ai-core { display: grid; place-items: center; width: 94px; height: 94px; border: 1px solid rgba(101,230,180,.42); border-radius: 26px; background: #10291f; color: var(--accent); font-size: 1.45rem; font-weight: 850; box-shadow: 0 0 60px rgba(101,230,180,.18); transform: rotate(-5deg); }
-    .ai-feature p { margin: 18px 0 0; color: var(--muted); }
-    .principle { margin-top: 22px; padding-left: 16px; border-left: 2px solid var(--accent); color: #d7e8e1; font-size: .92rem; }
-    .contact { padding-block: 110px; text-align: center; }
+    .contact { padding-block: 72px; text-align: center; }
     .contact h2 { margin-inline: auto; }
     .contact p { max-width: 580px; margin: 20px auto 30px; color: var(--muted); }
     .contact .actions { justify-content: center; }
@@ -130,33 +124,29 @@
     .delay-2 { transition-delay: .16s; }
     .delay-3 { transition-delay: .24s; }
     @keyframes pulse { 0%, 100% { opacity: .55; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.08); } }
-    @keyframes rotate { to { transform: rotate(360deg); } }
     @media (max-width: 820px) {
       .nav-links a:not(.nav-contact) { display: none; }
-      .hero { min-height: auto; grid-template-columns: 1fr; gap: 48px; padding-block: 76px; }
+      .hero { grid-template-columns: 1fr; gap: 42px; padding-block: 62px; }
       .signal-card { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
       .status { grid-column: 1 / -1; margin-bottom: 4px; }
       .metric, .metric:first-of-type { padding: 16px 0 0; border-top: 1px solid var(--border); }
       .metric strong { font-size: 1.55rem; }
-      .section-head, .ai-feature { grid-template-columns: 1fr; }
-      .ai-orbit { width: 220px; }
+      .section-head { grid-template-columns: 1fr; }
     }
     @media (max-width: 620px) {
       .container { width: min(100% - 28px, 1120px); }
       nav { min-height: 64px; }
-      .hero { padding-block: 58px 68px; }
-      h1 { font-size: clamp(3rem, 17vw, 4.7rem); }
-      .hero-copy { margin-top: 24px; }
-      section.content-section { padding-block: 68px; }
+      .hero { padding-block: 52px 58px; }
+      h1 { font-size: clamp(3.1rem, 15vw, 4.35rem); }
+      .hero-copy { margin-top: 18px; }
+      section.content-section { padding-block: 54px; }
       .section-head { gap: 14px; margin-bottom: 30px; }
       .expertise-grid { grid-template-columns: 1fr; }
-      .card { min-height: 190px; }
+      .card { min-height: 0; }
       .signal-card { grid-template-columns: 1fr; }
       .metric { display: flex; align-items: baseline; gap: 12px; }
       .metric span { margin: 0; }
       .role-item { grid-template-columns: 1fr; gap: 5px; padding-left: 36px; }
-      .ai-feature { gap: 22px; }
-      .ai-orbit { width: 180px; }
       footer { flex-direction: column; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -180,8 +170,9 @@
     <section class="hero container" id="top">
       <div>
         <p class="eyebrow reveal">Senior QA Automation Engineer</p>
-        <h1 class="reveal delay-1">Quality at scale.<span>Built to last.</span></h1>
-        <p class="hero-copy reveal delay-2">I am <strong>Juan Pablo Leal</strong>, a QA Automation Engineer with <strong>10+ years of experience</strong> building maintainable test frameworks, accelerating delivery through CI/CD, and leading quality initiatives across web, API, and microservices environments.</p>
+        <h1 class="reveal delay-1">Juan Pablo <span>Leal</span></h1>
+        <p class="role-line reveal delay-1">SDET · Test Automation Architect</p>
+        <p class="hero-copy reveal delay-2"><strong>10+ years of experience</strong> designing and building maintainable automation frameworks for web, APIs, and microservices, with a strong focus on CI/CD, cloud environments, and QA leadership.</p>
         <div class="actions reveal delay-3">
           <a class="button primary" href="mailto:jpleal79@gmail.com">Let's connect <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="button" href="https://www.linkedin.com/in/jpleal79" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -189,32 +180,31 @@
         </div>
       </div>
       <aside class="signal-card reveal delay-2" aria-label="Career highlights">
-        <div class="status"><span class="status-dot" aria-hidden="true"></span> Open to senior QA opportunities</div>
+        <div class="status"><span class="status-dot" aria-hidden="true"></span> Open to international opportunities</div>
         <div class="metric"><strong>10+</strong><span>Years in software quality</span></div>
         <div class="metric"><strong>~40%</strong><span>Automation coverage growth in a QA leadership role</span></div>
         <div class="metric"><strong>Up to 10 QAs</strong><span>Team leadership and mentoring</span></div>
-        <div class="metric"><strong>Languages</strong><span>Spanish — Native · English — Professional working proficiency (B2)</span></div>
       </aside>
     </section>
     <section class="content-section container" id="expertise">
-      <div class="section-head reveal"><p class="section-kicker">01 / Expertise</p><h2>Engineering confidence into every release.</h2></div>
+      <div class="section-head reveal"><p class="section-kicker">01 / Expertise</p><h2>Automation built for real delivery.</h2></div>
       <div class="expertise-grid">
-        <article class="card reveal"><span class="card-number">01</span><h3>Web Automation</h3><p>Scalable, maintainable UI automation with Playwright and Selenium, designed around reliable patterns, parallel execution, and actionable reporting.</p></article>
-        <article class="card reveal delay-1"><span class="card-number">02</span><h3>API &amp; Microservices Testing</h3><p>Automated contract, integration, and business-rule validation using Karate DSL, Postman, SQL, and robust test data strategies.</p></article>
-        <article class="card reveal"><span class="card-number">03</span><h3>CI/CD &amp; Quality Infrastructure</h3><p>Continuous test execution across CI/CD pipelines, containerized environments, cloud infrastructure, and reporting—turning automation into fast, visible release feedback.</p></article>
-        <article class="card reveal delay-1"><span class="card-number">04</span><h3>Quality Strategy &amp; Leadership</h3><p>QA process design, technical standards, risk-based testing, mentoring, and close collaboration with engineering and product teams.</p></article>
+        <article class="card reveal"><span class="card-number">01</span><h3>Web Automation</h3><p>Maintainable UI frameworks with Playwright and Selenium, parallel execution, and actionable reporting.</p></article>
+        <article class="card reveal delay-1"><span class="card-number">02</span><h3>API &amp; Microservices</h3><p>Contract, integration, and business-rule validation with reliable test data strategies.</p></article>
+        <article class="card reveal"><span class="card-number">03</span><h3>CI/CD &amp; Infrastructure</h3><p>Continuous testing across pipelines, containers, cloud environments, and reporting.</p></article>
+        <article class="card reveal delay-1"><span class="card-number">04</span><h3>QA Strategy &amp; Leadership</h3><p>Quality processes, technical standards, risk-based testing, mentoring, and team coordination.</p></article>
       </div>
     </section>
     <section class="content-section container" id="stack">
-      <div class="section-head reveal"><p class="section-kicker">02 / Technical stack</p><h2>A modern toolkit for reliable software delivery.</h2></div>
+      <div class="section-head reveal"><p class="section-kicker">02 / Technical stack</p><h2>Tools for reliable automation.</h2></div>
       <div class="stack-panel reveal">
         <div class="stack-group"><p class="stack-label">Automation &amp; Testing</p><div class="tags"><span class="tag">Playwright</span><span class="tag">TypeScript</span><span class="tag">Java</span><span class="tag">Selenium WebDriver</span><span class="tag">Cucumber</span><span class="tag">JUnit</span><span class="tag">Karate DSL</span><span class="tag">Postman</span><span class="tag">SQL</span></div></div>
         <div class="stack-group"><p class="stack-label">CI/CD, Cloud &amp; Infrastructure</p><div class="tags"><span class="tag">CI/CD Pipelines</span><span class="tag">Docker</span><span class="tag">Maven</span><span class="tag">Allure</span><span class="tag">AWS EC2</span><span class="tag">AWS Lambda</span><span class="tag">AWS S3</span></div></div>
-        <div class="stack-group"><p class="stack-label">AI-Assisted Quality Engineering</p><div class="tags"><span class="tag ai">GitHub Copilot</span><span class="tag ai">Codex Agents</span><span class="tag ai">ChatGPT</span><span class="tag ai">Gemini</span><span class="tag ai">Windsurf</span><span class="tag ai">AI Failure Analysis</span><span class="tag ai">AI-Assisted Test Design</span><span class="tag ai">Framework Diagnostics</span></div></div>
+        <div class="stack-group"><p class="stack-label">AI-Assisted Quality Engineering</p><div class="tags"><span class="tag ai">GitHub Copilot</span><span class="tag ai">Codex Agents</span><span class="tag ai">AI Failure Analysis</span><span class="tag ai">AI-Assisted Test Design</span><span class="tag ai">Framework Diagnostics</span></div></div>
       </div>
     </section>
     <section class="content-section container" id="experience">
-      <div class="section-head reveal"><p class="section-kicker">03 / Selected experience</p><h2>Enterprise quality across complex industries.</h2></div>
+      <div class="section-head reveal"><p class="section-kicker">03 / Selected experience</p><h2>Quality across complex industries.</h2></div>
       <div class="timeline">
         <article class="role-item reveal"><div class="company">Iberdrola</div><div><h3>Modern Web &amp; API Automation</h3><p>Playwright with TypeScript, Java, API testing, containerized execution, CI/CD, and AWS.</p></div></article>
         <article class="role-item reveal"><div class="company">Imagemaker</div><div><h3>Framework Standardization</h3><p>Automation architecture with Selenium, Playwright, Cucumber, and CI/CD integration.</p></div></article>
@@ -223,15 +213,9 @@
         <article class="role-item reveal"><div class="company">TSOFT</div><div><h3>Regression Automation</h3><p>Functional and regression testing with Java, Selenium, Maven, and SQL.</p></div></article>
       </div>
     </section>
-    <section class="content-section container" id="ai">
-      <div class="ai-feature reveal">
-        <div class="ai-orbit" aria-hidden="true"><div class="ai-core">AI</div></div>
-        <div><p class="section-kicker">04 / AI in quality engineering</p><h2>Faster insight. Human judgment.</h2><p>I use AI to support test design, failure classification, debugging, framework maintenance, and technical analysis—helping teams reduce investigation time and focus on higher-value quality decisions.</p><div class="principle">AI provides recommendations; engineering judgment and human validation remain in control.</div></div>
-      </div>
-    </section>
     <section class="contact container" id="contact">
       <p class="section-kicker reveal">Let's build quality in</p>
-      <h2 class="reveal delay-1">Looking for a senior QA engineer who can turn strategy into working automation?</h2>
+      <h2 class="reveal delay-1">Build better quality, together.</h2>
       <p class="reveal delay-2">Based in Santiago, Chile, and open to remote opportunities with international teams.</p>
       <div class="actions reveal delay-3"><a class="button primary" href="mailto:jpleal79@gmail.com">jpleal79@gmail.com</a><a class="button" href="https://www.linkedin.com/in/jpleal79" target="_blank" rel="noreferrer">View LinkedIn</a></div>
     </section>
