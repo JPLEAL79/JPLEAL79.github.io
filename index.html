@@ -1,134 +1,258 @@
 <!doctype html>
-<html lang="es">
+<html lang="en-US">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Juan Pablo Leal | QA Automation Engineer</title>
-  <meta name="description" content="Portafolio profesional de Juan Pablo Leal, Senior QA Automation Engineer especializado en automatización web, APIs, CI/CD y Playwright." />
+  <meta name="theme-color" content="#07110f" />
+  <meta name="color-scheme" content="dark" />
+  <title>Juan Pablo Leal | Senior QA Automation Engineer</title>
+  <meta name="description" content="Juan Pablo Leal is a Senior QA Automation Engineer with 10+ years of experience building scalable web and API test automation, CI/CD pipelines, and AI-assisted quality solutions." />
+  <meta property="og:title" content="Juan Pablo Leal | Senior QA Automation Engineer" />
+  <meta property="og:description" content="10+ years building reliable automation frameworks, quality strategies, and CI/CD solutions for web, APIs, and microservices." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jpleal79.github.io/" />
   <style>
     :root {
-      --bg: #0b1220;
-      --card: #111827;
-      --text: #e5e7eb;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --border: #1f2937;
+      --bg: #07110f;
+      --surface: rgba(16, 33, 28, 0.74);
+      --text: #f2f7f5;
+      --muted: #9aafa8;
+      --accent: #65e6b4;
+      --accent-soft: rgba(101, 230, 180, 0.12);
+      --border: rgba(173, 219, 201, 0.14);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+      --radius: 20px;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(180deg, #0b1220 0%, #111827 100%);
+      background:
+        radial-gradient(circle at 78% 4%, rgba(47, 212, 154, 0.11), transparent 29rem),
+        radial-gradient(circle at 7% 28%, rgba(61, 125, 252, 0.08), transparent 24rem),
+        var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
     }
-    .wrap { max-width: 980px; margin: 0 auto; padding: 48px 24px 72px; }
-    .hero { padding: 56px 0 36px; }
-    h1 { margin: 0 0 8px; font-size: clamp(2.3rem, 6vw, 4.6rem); line-height: 1.05; }
-    h2 { margin-top: 0; font-size: 1.45rem; }
-    .role { color: var(--accent); font-size: 1.25rem; font-weight: 700; }
-    .intro { max-width: 760px; color: var(--muted); font-size: 1.05rem; }
-    .links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
-    .links a {
-      color: var(--text); text-decoration: none; border: 1px solid var(--border);
-      background: rgba(17,24,39,.7); padding: 10px 14px; border-radius: 10px;
+    body::before {
+      position: fixed; inset: 0; z-index: -1; content: ""; opacity: 0.22;
+      background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, black, transparent 72%);
     }
-    .links a:hover { border-color: var(--accent); color: var(--accent); }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; margin-top: 28px; }
-    .card { background: rgba(17,24,39,.9); border: 1px solid var(--border); border-radius: 16px; padding: 22px; }
-    .card p { color: var(--muted); margin-bottom: 0; }
-    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-    .tag { border: 1px solid #334155; background: #0f172a; padding: 6px 10px; border-radius: 999px; font-size: .92rem; }
-    section { margin-top: 44px; }
-    .timeline { display: grid; gap: 14px; }
-    .item { border-left: 3px solid var(--accent); padding-left: 16px; }
-    .item strong { display: block; }
-    .item span { color: var(--muted); font-size: .95rem; }
-    footer { margin-top: 56px; color: var(--muted); font-size: .9rem; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .skip-link {
+      position: fixed; top: 12px; left: 12px; z-index: 100; padding: 10px 14px;
+      border-radius: 10px; background: var(--accent); color: #04110d; font-weight: 800;
+      transform: translateY(-150%); transition: transform .2s ease;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .container { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .site-header {
+      position: sticky; top: 0; z-index: 20; border-bottom: 1px solid transparent;
+      background: rgba(7, 17, 15, 0.72); backdrop-filter: blur(18px);
+      transition: border-color .25s ease, background .25s ease;
+    }
+    .site-header.scrolled { border-color: var(--border); background: rgba(7, 17, 15, 0.9); }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; font-size: .98rem; font-weight: 780; letter-spacing: -.01em; }
+    .brand-mark { width: 11px; height: 11px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 6px var(--accent-soft), 0 0 24px rgba(101,230,180,.55); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .9rem; font-weight: 650; transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--text); }
+    .hero { min-height: calc(100svh - 72px); display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(290px, .65fr); align-items: center; gap: clamp(48px, 8vw, 100px); padding-block: 78px 90px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 24px; color: var(--accent); font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    .eyebrow::before { width: 34px; height: 1px; content: ""; background: currentColor; }
+    h1 { max-width: 820px; margin: 0; font-size: clamp(3.3rem, 8.7vw, 7rem); line-height: .93; letter-spacing: -.067em; }
+    h1 span { display: block; color: var(--accent); }
+    .hero-copy { max-width: 700px; margin: 30px 0 0; color: var(--muted); font-size: clamp(1.02rem, 1.6vw, 1.18rem); }
+    .hero-copy strong { color: var(--text); font-weight: 650; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 48px; padding: 0 18px; border: 1px solid var(--border); border-radius: 12px; background: rgba(255,255,255,.025); color: var(--text); text-decoration: none; font-size: .92rem; font-weight: 750; transition: transform .2s ease, border-color .2s ease, background .2s ease, color .2s ease; }
+    .button:hover { transform: translateY(-2px); border-color: rgba(101,230,180,.48); background: var(--accent-soft); }
+    .button.primary { border-color: var(--accent); background: var(--accent); color: #04110d; }
+    .button.primary:hover { background: #88f0c8; }
+    .button svg { width: 17px; height: 17px; }
+    .signal-card { position: relative; padding: 28px; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: linear-gradient(145deg, rgba(19,42,34,.92), rgba(10,24,20,.82)); box-shadow: var(--shadow); }
+    .signal-card::after { position: absolute; top: -80px; right: -70px; width: 190px; height: 190px; content: ""; border-radius: 50%; background: rgba(101,230,180,.12); filter: blur(8px); }
+    .status { display: flex; align-items: center; gap: 9px; margin-bottom: 30px; color: #cceadf; font-size: .8rem; font-weight: 700; }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 15px var(--accent); animation: pulse 2.4s ease-in-out infinite; }
+    .metric { position: relative; z-index: 1; padding-block: 20px; border-top: 1px solid var(--border); }
+    .metric:first-of-type { border-top: 0; padding-top: 0; }
+    .metric:last-child { padding-bottom: 0; }
+    .metric strong { display: block; font-size: 2rem; line-height: 1.15; letter-spacing: -.04em; }
+    .metric span { display: block; margin-top: 5px; color: var(--muted); font-size: .87rem; }
+    section.content-section { padding-block: 90px; border-top: 1px solid var(--border); }
+    .section-head { display: grid; grid-template-columns: .55fr 1.45fr; gap: 32px; margin-bottom: 42px; }
+    .section-kicker { margin: 5px 0 0; color: var(--accent); font-size: .76rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+    h2 { max-width: 720px; margin: 0; font-size: clamp(2rem, 4.7vw, 3.6rem); line-height: 1.08; letter-spacing: -.045em; }
+    h3 { margin: 0; font-size: 1.06rem; letter-spacing: -.015em; }
+    .expertise-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .card { position: relative; min-height: 210px; padding: 28px; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); transition: transform .28s ease, border-color .28s ease, background .28s ease; }
+    .card:hover { transform: translateY(-5px); border-color: rgba(101,230,180,.35); background: rgba(19, 40, 34, .88); }
+    .card-number { display: block; margin-bottom: 48px; color: var(--accent); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .78rem; }
+    .card p { margin: 12px 0 0; color: var(--muted); font-size: .94rem; }
+    .stack-panel { padding: 30px; border: 1px solid var(--border); border-radius: var(--radius); background: rgba(9,23,19,.74); }
+    .stack-group + .stack-group { margin-top: 26px; padding-top: 26px; border-top: 1px solid var(--border); }
+    .stack-label { margin: 0 0 13px; color: var(--muted); font-size: .76rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .tags { display: flex; flex-wrap: wrap; gap: 9px; }
+    .tag { padding: 8px 12px; border: 1px solid var(--border); border-radius: 999px; background: rgba(255,255,255,.025); color: #d9e6e1; font-size: .86rem; font-weight: 620; transition: color .2s ease, border-color .2s ease, background .2s ease; }
+    .tag:hover { border-color: rgba(101,230,180,.45); background: var(--accent-soft); color: var(--accent); }
+    .tag.ai { border-color: rgba(101,230,180,.28); background: var(--accent-soft); color: #baf5dd; }
+    .timeline { position: relative; display: grid; gap: 12px; }
+    .timeline::before { position: absolute; top: 0; bottom: 0; left: 10px; width: 1px; content: ""; background: linear-gradient(var(--accent), rgba(101,230,180,.04)); }
+    .role-item { position: relative; display: grid; grid-template-columns: 180px 1fr; gap: 34px; padding: 0 0 36px 42px; }
+    .role-item::before { position: absolute; top: 7px; left: 6px; width: 9px; height: 9px; content: ""; border: 2px solid var(--bg); border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+    .company { color: var(--accent); font-weight: 760; }
+    .role-item p { margin: 7px 0 0; color: var(--muted); font-size: .93rem; }
+    .ai-feature { display: grid; grid-template-columns: .8fr 1.2fr; gap: 50px; align-items: center; padding: clamp(30px, 5vw, 52px); border: 1px solid rgba(101,230,180,.24); border-radius: 26px; background: linear-gradient(140deg, rgba(101,230,180,.11), rgba(10,27,22,.76) 55%); box-shadow: var(--shadow); }
+    .ai-orbit { position: relative; display: grid; place-items: center; width: min(280px, 100%); aspect-ratio: 1; margin-inline: auto; }
+    .ai-orbit::before, .ai-orbit::after { position: absolute; inset: 11%; content: ""; border: 1px solid rgba(101,230,180,.25); border-radius: 50%; animation: rotate 18s linear infinite; }
+    .ai-orbit::after { inset: 25%; border-style: dashed; animation-direction: reverse; animation-duration: 12s; }
+    .ai-core { display: grid; place-items: center; width: 94px; height: 94px; border: 1px solid rgba(101,230,180,.42); border-radius: 26px; background: #10291f; color: var(--accent); font-size: 1.45rem; font-weight: 850; box-shadow: 0 0 60px rgba(101,230,180,.18); transform: rotate(-5deg); }
+    .ai-feature p { margin: 18px 0 0; color: var(--muted); }
+    .principle { margin-top: 22px; padding-left: 16px; border-left: 2px solid var(--accent); color: #d7e8e1; font-size: .92rem; }
+    .contact { padding-block: 110px; text-align: center; }
+    .contact h2 { margin-inline: auto; }
+    .contact p { max-width: 580px; margin: 20px auto 30px; color: var(--muted); }
+    .contact .actions { justify-content: center; }
+    footer { display: flex; justify-content: space-between; gap: 20px; padding-block: 26px 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: .82rem; }
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .delay-1 { transition-delay: .08s; }
+    .delay-2 { transition-delay: .16s; }
+    .delay-3 { transition-delay: .24s; }
+    @keyframes pulse { 0%, 100% { opacity: .55; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.08); } }
+    @keyframes rotate { to { transform: rotate(360deg); } }
+    @media (max-width: 820px) {
+      .nav-links a:not(.nav-contact) { display: none; }
+      .hero { min-height: auto; grid-template-columns: 1fr; gap: 48px; padding-block: 76px; }
+      .signal-card { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .status { grid-column: 1 / -1; margin-bottom: 4px; }
+      .metric, .metric:first-of-type { padding: 16px 0 0; border-top: 1px solid var(--border); }
+      .metric strong { font-size: 1.55rem; }
+      .section-head, .ai-feature { grid-template-columns: 1fr; }
+      .ai-orbit { width: 220px; }
+    }
+    @media (max-width: 620px) {
+      .container { width: min(100% - 28px, 1120px); }
+      nav { min-height: 64px; }
+      .hero { padding-block: 58px 68px; }
+      h1 { font-size: clamp(3rem, 17vw, 4.7rem); }
+      .hero-copy { margin-top: 24px; }
+      section.content-section { padding-block: 68px; }
+      .section-head { gap: 14px; margin-bottom: 30px; }
+      .expertise-grid { grid-template-columns: 1fr; }
+      .card { min-height: 190px; }
+      .signal-card { grid-template-columns: 1fr; }
+      .metric { display: flex; align-items: baseline; gap: 12px; }
+      .metric span { margin: 0; }
+      .role-item { grid-template-columns: 1fr; gap: 5px; padding-left: 36px; }
+      .ai-feature { gap: 22px; }
+      .ai-orbit { width: 180px; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <section class="hero">
-      <div class="role">Senior QA Automation Engineer</div>
-      <h1>Juan Pablo Leal</h1>
-      <p class="intro">
-        QA Automation Engineer con 9+ años de experiencia en automatización web y APIs,
-        construcción de frameworks, CI/CD y mejora de calidad de software. Experiencia práctica
-        con Java, Selenium, Cucumber, Karate DSL, Playwright con TypeScript, Jenkins, Docker,
-        Allure y AWS, incorporando además herramientas de IA como apoyo al desarrollo y análisis de pruebas.
-      </p>
-      <div class="links">
-        <a href="https://github.com/JPLEAL79" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/jpleal79" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="mailto:jpleal79@gmail.com">Email</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header">
+    <nav class="container" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Juan Pablo Leal, home"><span class="brand-mark" aria-hidden="true"></span>Juan Pablo Leal</a>
+      <div class="nav-links">
+        <a href="#expertise">Expertise</a><a href="#stack">Technical stack</a><a href="#experience">Experience</a><a class="nav-contact" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero container" id="top">
+      <div>
+        <p class="eyebrow reveal">Senior QA Automation Engineer</p>
+        <h1 class="reveal delay-1">Quality at scale.<span>Built to last.</span></h1>
+        <p class="hero-copy reveal delay-2">I am <strong>Juan Pablo Leal</strong>, a QA Automation Engineer with <strong>10+ years of experience</strong> building maintainable test frameworks, accelerating delivery through CI/CD, and leading quality initiatives across web, API, and microservices environments.</p>
+        <div class="actions reveal delay-3">
+          <a class="button primary" href="mailto:jpleal79@gmail.com">Let's connect <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="button" href="https://www.linkedin.com/in/jpleal79" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="button" href="https://github.com/JPLEAL79" target="_blank" rel="noreferrer">GitHub Projects</a>
+        </div>
+      </div>
+      <aside class="signal-card reveal delay-2" aria-label="Career highlights">
+        <div class="status"><span class="status-dot" aria-hidden="true"></span> Open to senior QA opportunities</div>
+        <div class="metric"><strong>10+</strong><span>Years in software quality</span></div>
+        <div class="metric"><strong>~40%</strong><span>Automation coverage growth in a QA leadership role</span></div>
+        <div class="metric"><strong>Up to 10 QAs</strong><span>Team leadership and mentoring</span></div>
+        <div class="metric"><strong>Languages</strong><span>Spanish — Native · English — Professional working proficiency (B2)</span></div>
+      </aside>
+    </section>
+    <section class="content-section container" id="expertise">
+      <div class="section-head reveal"><p class="section-kicker">01 / Expertise</p><h2>Engineering confidence into every release.</h2></div>
+      <div class="expertise-grid">
+        <article class="card reveal"><span class="card-number">01</span><h3>Web Automation</h3><p>Scalable, maintainable UI automation with Playwright and Selenium, designed around reliable patterns, parallel execution, and actionable reporting.</p></article>
+        <article class="card reveal delay-1"><span class="card-number">02</span><h3>API &amp; Microservices Testing</h3><p>Automated contract, integration, and business-rule validation using Karate DSL, Postman, SQL, and robust test data strategies.</p></article>
+        <article class="card reveal"><span class="card-number">03</span><h3>CI/CD &amp; Quality Infrastructure</h3><p>Continuous test execution across CI/CD pipelines, containerized environments, cloud infrastructure, and reporting—turning automation into fast, visible release feedback.</p></article>
+        <article class="card reveal delay-1"><span class="card-number">04</span><h3>Quality Strategy &amp; Leadership</h3><p>QA process design, technical standards, risk-based testing, mentoring, and close collaboration with engineering and product teams.</p></article>
       </div>
     </section>
-
-    <section>
-      <h2>Stack técnico</h2>
-      <div class="tags">
-        <span class="tag">Playwright</span>
-        <span class="tag">TypeScript</span>
-        <span class="tag">Java</span>
-        <span class="tag">Selenium WebDriver</span>
-        <span class="tag">Cucumber</span>
-        <span class="tag">Karate DSL</span>
-        <span class="tag">Postman</span>
-        <span class="tag">Jenkins</span>
-        <span class="tag">Docker</span>
-        <span class="tag">Allure</span>
-        <span class="tag">AWS</span>
-        <span class="tag">SQL</span>
+    <section class="content-section container" id="stack">
+      <div class="section-head reveal"><p class="section-kicker">02 / Technical stack</p><h2>A modern toolkit for reliable software delivery.</h2></div>
+      <div class="stack-panel reveal">
+        <div class="stack-group"><p class="stack-label">Automation &amp; Testing</p><div class="tags"><span class="tag">Playwright</span><span class="tag">TypeScript</span><span class="tag">Java</span><span class="tag">Selenium WebDriver</span><span class="tag">Cucumber</span><span class="tag">JUnit</span><span class="tag">Karate DSL</span><span class="tag">Postman</span><span class="tag">SQL</span></div></div>
+        <div class="stack-group"><p class="stack-label">CI/CD, Cloud &amp; Infrastructure</p><div class="tags"><span class="tag">CI/CD Pipelines</span><span class="tag">Docker</span><span class="tag">Maven</span><span class="tag">Allure</span><span class="tag">AWS EC2</span><span class="tag">AWS Lambda</span><span class="tag">AWS S3</span></div></div>
+        <div class="stack-group"><p class="stack-label">AI-Assisted Quality Engineering</p><div class="tags"><span class="tag ai">GitHub Copilot</span><span class="tag ai">Codex Agents</span><span class="tag ai">ChatGPT</span><span class="tag ai">Gemini</span><span class="tag ai">Windsurf</span><span class="tag ai">AI Failure Analysis</span><span class="tag ai">AI-Assisted Test Design</span><span class="tag ai">Framework Diagnostics</span></div></div>
       </div>
     </section>
-
-    <section>
-      <h2>Áreas de experiencia</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Web Automation</h3>
-          <p>Frameworks mantenibles para pruebas funcionales y regresión con Selenium y Playwright.</p>
-        </article>
-        <article class="card">
-          <h3>API & Microservices</h3>
-          <p>Automatización de APIs y microservicios con Karate DSL y Postman, incluyendo validaciones de datos y reglas de negocio.</p>
-        </article>
-        <article class="card">
-          <h3>CI/CD</h3>
-          <p>Integración de suites automatizadas con Jenkins, Docker y pipelines para ejecución continua y reportes.</p>
-        </article>
-        <article class="card">
-          <h3>QA Strategy</h3>
-          <p>Definición de procesos, priorización de pruebas, mejora continua y trabajo transversal con desarrollo y producto.</p>
-        </article>
-      </div>
-    </section>
-
-    <section>
-      <h2>Experiencia destacada</h2>
+    <section class="content-section container" id="experience">
+      <div class="section-head reveal"><p class="section-kicker">03 / Selected experience</p><h2>Enterprise quality across complex industries.</h2></div>
       <div class="timeline">
-        <div class="item"><strong>Iberdrola</strong><span>Playwright + TypeScript, Java, APIs, Docker, Jenkins y AWS.</span></div>
-        <div class="item"><strong>Imagemaker</strong><span>Estandarización de frameworks con Selenium, Playwright, Cucumber y CI/CD.</span></div>
-        <div class="item"><strong>Lapzo</strong><span>Creación y consolidación del área de QA, automatización web/API y coordinación técnica.</span></div>
-        <div class="item"><strong>Acid Labs</strong><span>Automatización de APIs y microservicios con Karate DSL y frontend con Selenium/Cucumber.</span></div>
-        <div class="item"><strong>TSOFT</strong><span>Automatización funcional y regresión con Java, Selenium, Maven y SQL.</span></div>
+        <article class="role-item reveal"><div class="company">Iberdrola</div><div><h3>Modern Web &amp; API Automation</h3><p>Playwright with TypeScript, Java, API testing, containerized execution, CI/CD, and AWS.</p></div></article>
+        <article class="role-item reveal"><div class="company">Imagemaker</div><div><h3>Framework Standardization</h3><p>Automation architecture with Selenium, Playwright, Cucumber, and CI/CD integration.</p></div></article>
+        <article class="role-item reveal"><div class="company">Lapzo</div><div><h3>QA Practice Leadership</h3><p>Built the QA practice, led a team of up to 10 QAs, and increased automation coverage by approximately 40%.</p></div></article>
+        <article class="role-item reveal"><div class="company">Acid Labs</div><div><h3>API &amp; Frontend Quality</h3><p>API and microservices automation with Karate DSL, plus CI/CD-integrated frontend coverage with Selenium and Cucumber.</p></div></article>
+        <article class="role-item reveal"><div class="company">TSOFT</div><div><h3>Regression Automation</h3><p>Functional and regression testing with Java, Selenium, Maven, and SQL.</p></div></article>
       </div>
     </section>
-
-    <section>
-      <h2>Enfoque actual</h2>
-      <div class="card">
-        <p>
-          Durante el último tiempo he profundizado en Playwright con TypeScript y en el uso responsable de IA aplicada al testing,
-          especialmente para apoyar generación de pruebas, análisis de fallos, debugging y mantenimiento de frameworks.
-        </p>
+    <section class="content-section container" id="ai">
+      <div class="ai-feature reveal">
+        <div class="ai-orbit" aria-hidden="true"><div class="ai-core">AI</div></div>
+        <div><p class="section-kicker">04 / AI in quality engineering</p><h2>Faster insight. Human judgment.</h2><p>I use AI to support test design, failure classification, debugging, framework maintenance, and technical analysis—helping teams reduce investigation time and focus on higher-value quality decisions.</p><div class="principle">AI provides recommendations; engineering judgment and human validation remain in control.</div></div>
       </div>
     </section>
-
-    <footer>
-      Chile · Disponible para oportunidades en QA Automation
-    </footer>
+    <section class="contact container" id="contact">
+      <p class="section-kicker reveal">Let's build quality in</p>
+      <h2 class="reveal delay-1">Looking for a senior QA engineer who can turn strategy into working automation?</h2>
+      <p class="reveal delay-2">Based in Santiago, Chile, and open to remote opportunities with international teams.</p>
+      <div class="actions reveal delay-3"><a class="button primary" href="mailto:jpleal79@gmail.com">jpleal79@gmail.com</a><a class="button" href="https://www.linkedin.com/in/jpleal79" target="_blank" rel="noreferrer">View LinkedIn</a></div>
+    </section>
   </main>
+  <footer class="container"><span>© <span id="year"></span> Juan Pablo Leal</span><span>Senior QA Automation Engineer · Santiago, Chile</span></footer>
+  <script>
+    const header = document.querySelector('#site-header');
+    const revealItems = document.querySelectorAll('.reveal');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.querySelector('#year').textContent = new Date().getFullYear();
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 12), { passive: true });
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealItems.forEach((item) => item.classList.add('visible'));
+    } else {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+        });
+      }, { threshold: 0.14 });
+      revealItems.forEach((item) => observer.observe(item));
+    }
+  </script>
 </body>
 </html>
