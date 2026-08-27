@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#07110f" />
   <meta name="color-scheme" content="dark" />
-  <title>Juan Pablo Leal | SDET · Test Automation Architect</title>
-  <meta name="description" content="Juan Pablo Leal is an SDET and Test Automation Architect with 10+ years of experience building scalable web and API automation, CI/CD pipelines, and AI-assisted quality solutions." />
-  <meta property="og:title" content="Juan Pablo Leal | SDET · Test Automation Architect" />
+  <title>Juan Pablo Leal | Senior Software Development Engineer in Test</title>
+  <meta name="description" content="Juan Pablo Leal is a Senior Software Development Engineer in Test with 10+ years of experience building scalable automation frameworks for web, APIs, and microservices." />
+  <meta property="og:title" content="Juan Pablo Leal | Senior Software Development Engineer in Test" />
   <meta property="og:description" content="10+ years building reliable automation frameworks, quality strategies, and CI/CD solutions for web, APIs, and microservices." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://jpleal79.github.io/" />
@@ -69,7 +69,7 @@
     .nav-links a { color: var(--accent); text-decoration: none; font-size: 1rem; font-weight: 600; text-shadow: 0 0 18px rgba(99,230,177,.28); transition: color .2s ease, text-shadow .2s ease; }
     .nav-links a:hover, .nav-links a:focus-visible { color: var(--accent); text-shadow: 0 0 18px rgba(99,230,177,.48); }
     .hero { display: grid; grid-template-columns: minmax(0, 1.28fr) minmax(310px, .72fr); align-items: center; gap: clamp(46px, 7vw, 84px); padding-block: 44px 70px; }
-    h1 { max-width: 760px; margin: 0; font-size: clamp(2.8rem, 4.1vw, 3.5rem); font-weight: 500; line-height: 1.04; letter-spacing: -.045em; }
+    h1 { max-width: 760px; margin: 0; font-size: clamp(2.8rem, 4.1vw, 3.5rem); font-weight: 600; line-height: 1.04; letter-spacing: -.045em; }
     h1 span { color: inherit; }
     .role-line { margin: 17px 0 0; color: var(--text); font-size: clamp(1.05rem, 1.7vw, 1.24rem); font-weight: 500; letter-spacing: -.01em; }
     .hero-copy { max-width: 720px; margin: 24px 0 0; color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.09rem); line-height: 1.72; }
@@ -103,6 +103,9 @@
     .industry svg { flex: 0 0 auto; width: 21px; height: 21px; stroke: currentColor; }
     .industry span { font-size: .82rem; font-weight: 600; }
     section.content-section { padding-block: 64px; border-top: 1px solid var(--border); }
+    .about-panel { padding: clamp(28px, 4vw, 44px); border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+    .about-panel h2 { font-size: clamp(1.5rem, 2.2vw, 1.85rem); font-weight: 600; }
+    .about-panel p { max-width: 1040px; margin: 20px 0 0; color: var(--muted); font-size: clamp(1rem, 1.3vw, 1.08rem); line-height: 1.85; }
     .section-head { display: grid; grid-template-columns: .36fr 1.64fr; gap: 28px; margin-bottom: 30px; }
     .section-kicker { margin: 5px 0 0; color: var(--accent); font-size: .76rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
     h2 { max-width: 760px; margin: 0; color: var(--text); font-size: clamp(2rem, 3.25vw, 2.75rem); font-weight: 500; line-height: 1.18; letter-spacing: -.025em; }
@@ -179,7 +182,7 @@
     <nav class="container" aria-label="Primary navigation">
       <a class="brand" href="#top" aria-label="Juan Pablo Leal, home"><span class="brand-mark" aria-hidden="true"></span></a>
       <div class="nav-links">
-        <a href="#expertise">Expertise</a><a href="#stack">Technical Stack</a><a href="#experience">Experience</a>
+        <a href="#about">About</a><a href="#expertise">Skills</a><a href="#stack">Tech Stack</a><a href="#experience">Experience</a>
       </div>
     </nav>
   </header>
@@ -187,8 +190,8 @@
     <section class="hero container" id="top">
       <div>
         <h1 class="reveal">Juan Pablo Leal</h1>
-        <p class="role-line reveal delay-1">SDET · Test Automation Architect</p>
-        <p class="hero-copy reveal delay-2"><strong>With 10+ years in software quality,</strong> I design scalable, maintainable, and easy-to-use automation frameworks for web, APIs, and microservices. My work combines clean design patterns, DOM analysis, and resilient locator strategies to reduce test fragility. I partner closely with clients and engineering teams to solve quality challenges, support delivery, and strengthen a shared quality culture.</p>
+        <p class="role-line reveal delay-1">Senior Software Development Engineer in Test</p>
+        <p class="hero-copy reveal delay-2">Automation-first quality engineer with 10+ years building scalable test frameworks for web, APIs, and microservices.</p>
         <div class="actions reveal delay-3">
           <a class="button primary" href="mailto:jpleal79@gmail.com">Let's connect <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           <a class="button" href="https://www.linkedin.com/in/jpleal79" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -207,6 +210,12 @@
           </div>
         </div>
       </aside>
+    </section>
+    <section class="content-section container" id="about">
+      <div class="about-panel reveal">
+        <h2>About Me</h2>
+        <p>With 10+ years in software quality and test automation, I specialize in designing and building scalable, maintainable frameworks for web, APIs, and microservices. My approach combines clean architecture, resilient locator strategies, CI/CD integration, and risk-based testing to reduce test fragility and accelerate delivery. I work closely with clients and engineering teams to solve quality challenges, improve processes, and build a strong quality culture supported by modern automation and AI-assisted engineering practices.</p>
+      </div>
     </section>
     <section class="industry-section container" aria-labelledby="industries-title">
       <p class="section-kicker" id="industries-title">Industry experience</p>
@@ -232,7 +241,7 @@
       </div>
     </section>
     <section class="content-section container" id="expertise">
-      <div class="section-head reveal"><p class="section-kicker">01 / Expertise</p><h2>Test automation expertise.</h2></div>
+      <div class="section-head reveal"><p class="section-kicker">01 / Skills</p><h2>Test automation expertise.</h2></div>
       <div class="expertise-grid">
         <article class="card reveal"><span class="card-number">01</span><h3>Web Automation</h3><p>Maintainable UI frameworks with Playwright and Selenium, parallel execution, and actionable reporting.</p></article>
         <article class="card reveal delay-1"><span class="card-number">02</span><h3>API &amp; Microservices</h3><p>Contract, integration, and business-rule validation with reliable test data strategies.</p></article>
@@ -241,7 +250,7 @@
       </div>
     </section>
     <section class="content-section container" id="stack">
-      <div class="section-head reveal"><p class="section-kicker">02 / Technical stack</p><h2>Core Technologies.</h2></div>
+      <div class="section-head reveal"><p class="section-kicker">02 / Tech Stack</p><h2>Core Technologies.</h2></div>
       <div class="stack-panel reveal">
         <div class="stack-group"><p class="stack-label">Automation &amp; Testing</p><div class="tags"><span class="tag">Playwright</span><span class="tag">TypeScript</span><span class="tag">Java</span><span class="tag">Selenium WebDriver</span><span class="tag">Cucumber</span><span class="tag">JUnit</span><span class="tag">Karate DSL</span><span class="tag">Postman</span><span class="tag">SQL</span></div></div>
         <div class="stack-group"><p class="stack-label">CI/CD, Cloud &amp; Infrastructure</p><div class="tags"><span class="tag">CI/CD Pipelines</span><span class="tag">Docker</span><span class="tag">Maven</span><span class="tag">Allure</span><span class="tag">AWS</span></div></div>
@@ -260,7 +269,7 @@
       </div>
     </section>
   </main>
-  <footer class="container"><span>© <span id="year"></span> Juan Pablo Leal</span><span>SDET · Test Automation Architect · Santiago, Chile</span></footer>
+  <footer class="container"><span>© <span id="year"></span> Juan Pablo Leal</span><span>Senior Software Development Engineer in Test · Santiago, Chile</span></footer>
   <script>
     const header = document.querySelector('#site-header');
     const revealItems = document.querySelectorAll('.reveal');
