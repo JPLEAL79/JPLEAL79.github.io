@@ -42,11 +42,13 @@
       -webkit-font-smoothing: antialiased;
     }
     body::before {
-      position: fixed; inset: 0; z-index: -1; content: ""; opacity: 0.22;
+      position: fixed; inset: 0; z-index: 0; content: ""; opacity: 0.08; pointer-events: none;
       background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
       background-size: 48px 48px;
       mask-image: linear-gradient(to bottom, black, transparent 72%);
     }
+    .network-bg { position: fixed; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; opacity: .42; }
+    main, footer { position: relative; z-index: 1; }
     a { color: inherit; }
     button, a { -webkit-tap-highlight-color: transparent; }
     .skip-link {
@@ -69,8 +71,15 @@
     .nav-links a { color: var(--accent); text-decoration: none; font-size: 1rem; font-weight: 600; text-shadow: 0 0 18px rgba(99,230,177,.28); transition: color .2s ease, text-shadow .2s ease; }
     .nav-links a:hover, .nav-links a:focus-visible { color: var(--accent); text-shadow: 0 0 18px rgba(99,230,177,.48); }
     .hero { display: grid; grid-template-columns: minmax(0, 1.28fr) minmax(310px, .72fr); align-items: center; gap: clamp(46px, 7vw, 84px); padding-block: 44px 70px; }
-    h1 { max-width: 760px; margin: 0; font-size: clamp(2.8rem, 4.1vw, 3.5rem); font-weight: 600; line-height: 1.04; letter-spacing: -.045em; }
+    h1 { max-width: 760px; margin: 0; font-size: clamp(2.8rem, 4.1vw, 3.5rem); font-weight: 700; line-height: 1.04; letter-spacing: -.045em; }
     h1 span { color: inherit; }
+    h1 .name-last {
+      color: var(--accent);
+      background: linear-gradient(105deg, #63e6b1 8%, #51d9aa 52%, #8af2ca 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
     .role-line { margin: 17px 0 0; color: var(--text); font-size: clamp(1.05rem, 1.7vw, 1.24rem); font-weight: 500; letter-spacing: -.01em; }
     .hero-copy { max-width: 720px; margin: 24px 0 0; color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.09rem); line-height: 1.72; }
     .hero-copy strong { color: var(--text); font-weight: 650; }
@@ -177,6 +186,7 @@
   </style>
 </head>
 <body>
+  <canvas class="network-bg" id="network-bg" aria-hidden="true"></canvas>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" id="site-header">
     <nav class="container" aria-label="Primary navigation">
@@ -189,7 +199,7 @@
   <main id="main">
     <section class="hero container" id="top">
       <div>
-        <h1 class="reveal">Juan Pablo Leal</h1>
+        <h1 class="reveal"><span>Juan Pablo</span> <span class="name-last">Leal</span></h1>
         <p class="role-line reveal delay-1">Senior Software Development Engineer in Test</p>
         <p class="hero-copy reveal delay-2">Automation-first quality engineer with 10+ years building scalable test frameworks for web, APIs, and microservices.</p>
         <div class="actions reveal delay-3">
@@ -226,7 +236,7 @@
         <div class="industry"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1"/><circle cx="19" cy="20" r="1"/><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L22 8H6"/></svg><span>E-commerce</span></div>
         <div class="industry"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 10 10-5 10 5-10 5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5M22 10v6"/></svg><span>Education</span></div>
         <div class="industry"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3Z"/><path d="m9 12 2 2 4-4"/></svg><span>Insurance</span></div>
-        <div class="industry"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.6 2.7 8.1 7 10 4.3-1.9 7-5.4 7-10V6Z"/><path d="M9 11h6M12 8v6"/></svg><span>Law Enforcement</span></div>
+        <div class="industry"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.6 2.7 8.1 7 10 4.3-1.9 7-5.4 7-10V6Z"/><path d="M9 11h6M12 8v6"/></svg><span>Police</span></div>
         <div class="industry"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22V4a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v18M4 9h11M8 6h3"/><path d="M15 7h2l3 3v7a2 2 0 0 1-4 0v-4"/></svg><span>Oil &amp; Gas</span></div>
         <div class="industry"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/><path d="M7.5 12h2l1-2.2 2 4.4 1.2-2.2h2.8"/></svg><span>Healthcare</span></div>
         <div class="industry industry-clone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7"/><path d="M5 10v9M9 10v9M15 10v9M19 10v9M3 19h18M2 22h20"/></svg><span>Banking</span></div>
@@ -234,14 +244,14 @@
         <div class="industry industry-clone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1"/><circle cx="19" cy="20" r="1"/><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h8.9a2 2 0 0 0 2-1.6L22 8H6"/></svg><span>E-commerce</span></div>
         <div class="industry industry-clone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m2 10 10-5 10 5-10 5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5M22 10v6"/></svg><span>Education</span></div>
         <div class="industry industry-clone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3Z"/><path d="m9 12 2 2 4-4"/></svg><span>Insurance</span></div>
-        <div class="industry industry-clone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.6 2.7 8.1 7 10 4.3-1.9 7-5.4 7-10V6Z"/><path d="M9 11h6M12 8v6"/></svg><span>Law Enforcement</span></div>
+        <div class="industry industry-clone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v5c0 4.6 2.7 8.1 7 10 4.3-1.9 7-5.4 7-10V6Z"/><path d="M9 11h6M12 8v6"/></svg><span>Police</span></div>
         <div class="industry industry-clone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22V4a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v18M4 9h11M8 6h3"/><path d="M15 7h2l3 3v7a2 2 0 0 1-4 0v-4"/></svg><span>Oil &amp; Gas</span></div>
         <div class="industry industry-clone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/><path d="M7.5 12h2l1-2.2 2 4.4 1.2-2.2h2.8"/></svg><span>Healthcare</span></div>
       </div>
       </div>
     </section>
     <section class="content-section container" id="expertise">
-      <div class="section-head reveal"><p class="section-kicker">01 / Skills</p><h2>Test automation expertise.</h2></div>
+      <div class="section-head reveal"><p class="section-kicker">01 / Skills</p><h2>Quality Engineering.</h2></div>
       <div class="expertise-grid">
         <article class="card reveal"><span class="card-number">01</span><h3>Web Automation</h3><p>Maintainable UI frameworks with Playwright and Selenium, parallel execution, and actionable reporting.</p></article>
         <article class="card reveal delay-1"><span class="card-number">02</span><h3>API &amp; Microservices</h3><p>Contract, integration, and business-rule validation with reliable test data strategies.</p></article>
@@ -252,14 +262,14 @@
     <section class="content-section container" id="stack">
       <div class="section-head reveal"><p class="section-kicker">02 / Tech Stack</p><h2>Core Technologies.</h2></div>
       <div class="stack-panel reveal">
-        <div class="stack-group"><p class="stack-label">Automation &amp; Testing</p><div class="tags"><span class="tag">Playwright</span><span class="tag">TypeScript</span><span class="tag">Java</span><span class="tag">Selenium WebDriver</span><span class="tag">Cucumber</span><span class="tag">JUnit</span><span class="tag">Karate DSL</span><span class="tag">Postman</span><span class="tag">SQL</span></div></div>
+        <div class="stack-group"><p class="stack-label">Automation &amp; Testing</p><div class="tags"><span class="tag">Playwright</span><span class="tag">TypeScript</span><span class="tag">Java</span><span class="tag">Selenium WebDriver</span><span class="tag">Selenium Grid</span><span class="tag">Cucumber</span><span class="tag">JUnit</span><span class="tag">TestNG</span><span class="tag">Karate DSL</span><span class="tag">Postman</span><span class="tag">SQL</span></div></div>
         <div class="stack-group"><p class="stack-label">CI/CD, Cloud &amp; Infrastructure</p><div class="tags"><span class="tag">CI/CD Pipelines</span><span class="tag">Docker</span><span class="tag">Maven</span><span class="tag">Allure</span><span class="tag">AWS</span></div></div>
         <div class="stack-group"><p class="stack-label">AI-Assisted Quality Engineering</p><div class="tags"><span class="tag ai">AI Agents</span><span class="tag ai">AI Failure Analysis</span><span class="tag ai">AI-Assisted Test Design</span><span class="tag ai">Framework Diagnostics</span></div></div>
         <div class="stack-group"><p class="stack-label">Agile Methodologies</p><div class="tags"><span class="tag">Scrum</span><span class="tag">Kanban</span><span class="tag">Agile Delivery</span></div></div>
       </div>
     </section>
     <section class="content-section container" id="experience">
-      <div class="section-head reveal"><p class="section-kicker">03 / Selected experience</p><h2>Selected enterprise experience.</h2></div>
+      <div class="section-head reveal"><p class="section-kicker">03 / Experience</p><h2>Professional Experience.</h2></div>
       <div class="timeline">
         <article class="role-item reveal"><div class="company">Iberdrola</div><div><h3>Modern Web &amp; API Automation</h3><p>Playwright with TypeScript, Java, API testing, containerized execution, CI/CD, and AWS.</p></div></article>
         <article class="role-item reveal"><div class="company">Imagemaker</div><div><h3>Framework Standardization</h3><p>Automation architecture with Selenium, Playwright, Cucumber, and CI/CD integration.</p></div></article>
@@ -286,6 +296,67 @@
       }, { threshold: 0.14 });
       revealItems.forEach((item) => observer.observe(item));
     }
+
+    const networkCanvas = document.querySelector('#network-bg');
+    const networkContext = networkCanvas.getContext('2d');
+    let networkPoints = [];
+    let networkFrame;
+
+    const resizeNetwork = () => {
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      networkCanvas.width = Math.round(window.innerWidth * pixelRatio);
+      networkCanvas.height = Math.round(window.innerHeight * pixelRatio);
+      networkCanvas.style.width = `${window.innerWidth}px`;
+      networkCanvas.style.height = `${window.innerHeight}px`;
+      networkContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+
+      const pointCount = Math.max(22, Math.min(46, Math.round(window.innerWidth / 34)));
+      networkPoints = Array.from({ length: pointCount }, () => ({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        vx: (Math.random() - .5) * .12,
+        vy: (Math.random() - .5) * .12,
+        radius: .7 + Math.random() * .85
+      }));
+    };
+
+    const drawNetwork = () => {
+      networkContext.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      networkPoints.forEach((point, index) => {
+        if (!reduceMotion) {
+          point.x = (point.x + point.vx + window.innerWidth) % window.innerWidth;
+          point.y = (point.y + point.vy + window.innerHeight) % window.innerHeight;
+        }
+
+        networkContext.beginPath();
+        networkContext.arc(point.x, point.y, point.radius, 0, Math.PI * 2);
+        networkContext.fillStyle = 'rgba(99, 230, 177, .46)';
+        networkContext.fill();
+
+        for (let next = index + 1; next < networkPoints.length; next += 1) {
+          const other = networkPoints[next];
+          const distance = Math.hypot(point.x - other.x, point.y - other.y);
+          if (distance < 125) {
+            networkContext.beginPath();
+            networkContext.moveTo(point.x, point.y);
+            networkContext.lineTo(other.x, other.y);
+            networkContext.strokeStyle = `rgba(99, 230, 177, ${(.075 * (1 - distance / 125)).toFixed(3)})`;
+            networkContext.lineWidth = .7;
+            networkContext.stroke();
+          }
+        }
+      });
+
+      if (!reduceMotion) networkFrame = window.requestAnimationFrame(drawNetwork);
+    };
+
+    resizeNetwork();
+    drawNetwork();
+    window.addEventListener('resize', () => {
+      window.cancelAnimationFrame(networkFrame);
+      resizeNetwork();
+      drawNetwork();
+    }, { passive: true });
   </script>
 </body>
 </html>
